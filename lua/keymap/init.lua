@@ -74,7 +74,7 @@ local plug_map = {
 	-- Plugin Undotree
 	["n|<Leader>u"] = map_cr("UndotreeToggle"):with_noremap():with_silent(),
 	-- Plugin Telescope
-	["n|<Leader>fp"] = map_cu("lua require('telescope').extensions.project.project{}"):with_noremap():with_silent(),
+	["n|<Leader>fp"] = map_cu("lua require('telescope').extensions.project.project{base_dirs = {'/home/peng/code',		'/home/peng/tmp'},sync_with_nvim_tree = true,}"):with_noremap():with_silent(),
 	["n|<Leader>fr"] = map_cu("lua require('telescope').extensions.frecency.frecency{}"):with_noremap():with_silent(),
 	["n|<Leader>fe"] = map_cu("Telescope oldfiles"):with_noremap():with_silent(),
 	["n|<Leader>ff"] = map_cu("Telescope find_files"):with_noremap():with_silent(),
@@ -135,6 +135,9 @@ local plug_map = {
 	-- Plugin Diffview
 	["n|<leader>D"] = map_cr("DiffviewOpen"):with_silent():with_noremap(),
 	["n|<leader><leader>D"] = map_cr("DiffviewClose"):with_silent():with_noremap(),
+	-- plugin Neogen
+	["n|<leader>cc"] = map_cr("Neogen"):with_silent():with_noremap(),
+
 }
 
 bind.nvim_load_mapping(plug_map)
